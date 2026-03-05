@@ -6,220 +6,203 @@
 <title>Aditya Shil | Portfolio</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif}
-
-body{
-min-height:100vh;
-color:white;
-overflow-x:hidden;
-background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
-}
-
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
-
-header{
-text-align:center;
-padding:40px 0;
-}
-
-header h1{
-font-size:3rem;
-margin-bottom:10px;
-}
-
-header p{
-opacity:0.9;
-}
-
-.card{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-padding:25px;
-border-radius:15px;
-margin-top:20px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-background:rgba(255,255,255,0.15);
-}
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:10px;
-}
-
-.skill{
-background:#00c6ff;
-padding:8px 15px;
-border-radius:20px;
-font-size:14px;
-color:black;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-margin-top:15px;
-}
-
-.gallery div{
-height:150px;
-display:flex;
-align-items:center;
-justify-content:center;
-opacity:0.7;
-border-radius:10px;
-overflow:hidden;
-}
-
-.gallery img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:10px;
-}
-
-.socials{
-display:flex;
-gap:20px;
-justify-content:center;
-margin-top:20px;
-}
-
-.socials a{
-color:white;
-font-size:32px;
-text-decoration:none;
-transition:0.3s;
-}
-
-.socials a:hover{
-color:#00c6ff;
-transform:scale(1.2);
-}
-
-footer{
-text-align:center;
-margin-top:40px;
-opacity:0.7;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:black;color:white;scroll-behavior:smooth;}
+canvas{position:fixed;top:0;left:0;z-index:-1;}
+.navbar{position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:25px;padding:15px 0;background:rgba(0,0,0,0.8);z-index:10;}
+.navbar a{color:white;text-decoration:none;font-weight:bold;transition:0.3s;}
+.navbar a:hover{color:#00c6ff;}
+.container{max-width:1100px;margin:auto;padding:120px 20px 40px;}
+section{padding:60px 0;}
+header{text-align:center;padding-top:60px;}
+header img{width:150px;height:150px;border-radius:50%;border:4px solid #00c6ff;margin-top:10px;}
+header h1{font-size:3rem;margin-bottom:10px;color:white;}
+header p{color:#ccc;}
+.card{background:rgba(0,0,50,0.4);backdrop-filter:blur(10px);padding:25px;border-radius:15px;margin-top:25px;transition:0.3s;border:1px solid #00c6ff;}
+.card:hover{transform:translateY(-5px);background:rgba(0,0,80,0.5);}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
+.skill{background:#00c6ff;color:black;padding:8px 15px;border-radius:20px;font-size:14px;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:15px;}
+.gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;transition:0.3s;}
+.gallery img:hover{transform:scale(1.08);}
+.socials{display:flex;justify-content:center;gap:25px;margin-top:20px;}
+.socials a{font-size:32px;color:white;transition:0.3s;}
+.socials a:hover{transform:scale(1.2);}
+footer{text-align:center;margin-top:40px;opacity:0.7;padding:20px 0;}
+.modal{display:flex;justify-content:center;align-items:center;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:100;}
+.modal-content{background:#111;padding:30px;border-radius:10px;color:#00ff9d;font-family:monospace;position:relative;text-align:center;}
+.modal-content h2{color:#00c6ff;margin-bottom:15px;}
+.modal-close{position:absolute;top:10px;right:15px;font-size:20px;cursor:pointer;color:#00c6ff;}
 </style>
 </head>
-
 <body>
 
 <canvas id="bg"></canvas>
 
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Connect</a>
+</div>
+
 <div class="container">
 
+<section id="home">
 <header>
 <h1>Aditya Shil</h1>
-<img src="images/profilemain.jpeg" alt="Aditya Profile" style="width:150px;height:150px;border-radius:50%;border:3px solid white;margin-top:10px;">
-<p>B.Sc in Computer Science & Engineering | North South University</p>
+<img src="images/profilemain.jpeg" alt="Profile">
+<p>B.Sc in Computer Science and Engineering at North South University</p>
 </header>
+</section>
 
+<section id="about">
 <div class="card">
 <h2>About Me</h2>
-<p>
-Hello! I'm <strong>Aditya Shil</strong>, a B.Sc student in Computer Science and Engineering at North South University. I enjoy learning new technologies and building software projects. Currently I am focusing on improving my programming skills and exploring modern web development.
-</p>
-<p>
-I am also exploring <strong>Competitive Programming</strong> to strengthen my problem-solving and algorithmic thinking. Besides programming, I have a strong interest in gaming and esports.
-</p>
-<p>
-Previously I was an <strong>Esports player in PUBG</strong>, where I developed teamwork, strategy, and fast decision-making skills.
-</p>
-</div>
+<p>Hello! I'm <strong>Aditya Shil</strong>, a B.Sc student in Computer Science and Engineering at North South University. I enjoy learning new technologies and building software projects. Currently I am focusing on improving my programming skills and exploring modern web development.
 
+I am also exploring <strong>Competitive Programming </strong> to strengthen my problem-solving and algorithmic thinking. Besides programming, I have a strong interest in gaming and esports.
+
+Previously I was an <strong>Esports player</strong>  in <strong>PUBG</strong>, where I developed teamwork, strategy, and fast decision-making skills..</p>
+
+</div>
+</section>
+
+<section id="experience">
 <div class="card">
-<h2>Skills</h2>
-<div class="skills">
-<div class="skill">C</div>
-<div class="skill">C++</div>
-<div class="skill">Java</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
+<h2>Experience / Skills</h2>
+<div class="timeline">
+  <div class="timeline-event">
+    <h4>2019 - 2025: Esports PUBG Player</h4>
+    <p>Competitions, strategy, teamwork, and fast decision-making.</p>
+  </div>
+  <div class="timeline-event">
+    <h4>Experienced in:</h4>
+    <p>HTML, CSS, C/C++, Java</p>
+  </div>
 </div>
 </div>
+</section>
 
+<section id="education">
 <div class="card">
-<h2>Learning</h2>
-<p>Currently learning Web Development and exploring modern technologies...</p>
+<h2>Education</h2>
+<p><strong>Currently:</strong> B.Sc in Computer Science and Engineering, North South University</p>
+<br>
+<p><strong>College:</strong> Bakalia Govt. College (Passed with GPA: 5.00)</p>
+<br>
+<p><strong>High School:</strong> Chittagong Engineering University School & College (Passed with GPA: 5.00)</p>
 </div>
+</section>
 
+<section id="projects">
 <div class="card">
 <h2>Projects / Photos</h2>
 <p>I will upload future project updates in this section...</p>
 <div class="gallery">
-<div>
-<!-- <img src="images/profile.jpg" alt="Aditya Profile"> -->
-</div>
-<div>
-<!-- <img src="images/project1.jpg" alt="Project Screenshot"> -->
-</div>
-<div>
-<!-- <img src="images/pubg.jpg" alt="PUBG Esports"> -->
-</div>
-<div>
-<!-- <img src="images/project2.jpg" alt="Coding Project"> -->
+<img src="images/project1.jpg" alt="Project 1">
+<img src="images/project2.jpg" alt="Project 2">
+<img src="images/pubg.jpg" alt=".......">
+<img src="images/project3.jpg" alt="....">
 </div>
 </div>
-</div>
+</section>
 
+<section id="skills">
 <div class="card">
-<h2>Social Profiles</h2>
-<p>Feel free to connect with me or reach out through my social profiles below...</p>
+<h2>Technical Skills</h2>
+<p>Programming Languages:</p>
+<div class="progress-container"><div class="progress-bar" style="width:90%"></div></div>
+<p>Web Development (HTML/CSS/Js):</p>
+<div class="progress-container"><div class="progress-bar" style="width:85%"></div></div>
+<p>C/C++, Java & OOP:</p>
+<div class="progress-container"><div class="progress-bar" style="width:80%"></div></div>
+<p>Learning DSA and exploring Competitive Programming:</p>
+<div class="progress-container"><div class="progress-bar" style="width:75%"></div></div>
+</div>
+</section>
+
+<section id="services">
+<div class="card">
+<h2>Services</h2>
+<p>Still learning.</p>
+</div>
+</section>
+
+<section id="contact">
+<div class="card">
+<h2>Connect With Me</h2>
+<p>If you'd like to connect or collaborate, reach out via my social links:</p>
 <div class="socials">
+
 <a href="https://www.youtube.com/@treatorxgaming" target="_blank"><i class="fab fa-youtube"></i></a>
 <a href="https://www.facebook.com/share/1LLtr7j9mb/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a href="https://github.com/dashboard" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://github.com/ImAd1tya" target="_blank"><i class="fab fa-github"></i></a>
 </div>
 </div>
+</section>
 
 <footer>
-<p>© 2026 Aditya Shil</p>
+<p>© 2026 Aditya Shil | <a href="#home">Home</a> | <a href="#projects">Projects</a> | <a href="#about">About</a> | <a href="#services">Services</a> | <a href="#contact">Connect</a></p>
 </footer>
 
 </div>
 
+<!-- Java Code Modal -->
+<div class="modal" id="javaModal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>Welcome!</h2>
+<pre>
+public class Portfolio {
+    public static void main(String[] args) {
+        String name = "Aditya Shil";
+        System.out.println("Hello, my name is " + name);
+    }
+}
+</pre>
+  </div>
+</div>
+
 <script>
-const canvas=document.getElementById("bg");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-let particles=[];
-for(let i=0;i<100;i++){
-particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2,speedX:(Math.random()-0.5),speedY:(Math.random()-0.5)});
+// Particle background
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let particles = [];
+for(let i=0;i<200;i++){
+  particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,radius:Math.random()*2+0.5,speedX:(Math.random()-0.5),speedY:(Math.random()-0.5)});
 }
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-particles.forEach(p=>{p.x+=p.speedX;p.y+=p.speedY;if(p.x<0||p.x>canvas.width)p.speedX*=-1;if(p.y<0||p.y>canvas.height)p.speedY*=-1;ctx.fillStyle="white";ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();});
-requestAnimationFrame(animate);
+function animateParticles(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    p.x+=p.speedX; p.y+=p.speedY;
+    if(p.x<0||p.x>canvas.width)p.speedX*=-1;
+    if(p.y<0||p.y>canvas.height)p.speedY*=-1;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+    ctx.fillStyle='rgba(0,200,255,0.8)';
+    ctx.fill();
+  });
+  requestAnimationFrame(animateParticles);
 }
-animate();
+animateParticles();
+window.addEventListener("resize",()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
+
+// Java code modal auto-popup
+const modal = document.getElementById('javaModal');
+const span = document.querySelector('.modal-close');
+window.onload = () => { modal.style.display = 'flex'; };
+span.onclick = () => { modal.style.display='none'; };
+window.onclick = e => { if(e.target==modal){ modal.style.display='none'; } };
 </script>
 
 </body>
 </html>
-
-
-
-
